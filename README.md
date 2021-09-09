@@ -10,6 +10,6 @@
 > After running, Script will move all your profiles into new "profiles" folder.
 
 ## Features
-- Simple console interface for walker lauching with automaited loaded profile.
+- Simple console interface for walker launching with automaited loaded profile.
 - All new ini profiles will be moved to profiles automatically after script running.
 - Possibility to set account settings (login/password) to profile.
