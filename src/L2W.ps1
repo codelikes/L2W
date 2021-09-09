@@ -1,11 +1,12 @@
 $currentLocation = Get-Location
 
-. .\L2WUtils.ps1
-
 $profilePathInit = "$($currentLocation)\profiles"
 $profileSettings = @()
 $profileSettingsFile = "profileSettings.json"
 $profileSettingsFilePath = "$profilePathInit\profileSettings.json"
+
+. .\L2WUtils.ps1
+
 
 while($true)
 {

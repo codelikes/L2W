@@ -1,4 +1,5 @@
 $currentLocation = Get-Location
+$profileSettingsFile = 'profileSettings.json'
 
 . .\L2WUtilsJson.ps1
 
@@ -46,7 +47,9 @@ function Process-InI-Files {
 }
 
 function Process-Profile {
-    $items = Get-ChildItem -Path $profilePathInit -Name
+    $items = Get-ChildItem -Path $profilePathInit -Name | Where-Object { $_ -ne $profileSettingsFile }
+
+    Write-Host $items
 
     $iterator = 1
     
@@ -82,7 +85,7 @@ function Set-Account-Config {
     param($profile)
 
     $currentLocation = Get-Location
-    $settingFilePath = "$currentLocation\profiles\profileSettings.json"
+    $settingFilePath = "$currentLocation\profiles\$profileSettingsFile"
     $setIniFile = "$currentLocation\Set.Ini"
 
     $settings = Get-FromJson $settingFilePath
@@ -101,7 +104,7 @@ function Process-Setting {
     param ($profile)
 
     Write-Output '1. Load and start'
-    Write-Output '2. Set password'
+    Write-Output '2. Set l2 account'
 
     $option = Read-Host 'Please choose option:'
 
